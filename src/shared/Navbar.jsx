@@ -41,7 +41,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <NavLink><button className='btn'>Register</button></NavLink>
+    <NavLink to={'/register'}><button className='btn'>Register</button></NavLink>
   </div>
 </div>
     );
