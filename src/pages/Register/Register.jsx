@@ -1,7 +1,8 @@
-import React, { use, useContext } from 'react';
+import React, { use } from 'react';
 import Lottie from "lottie-react";
 import lottieRegister from '../../assets/lotties/register.json'
 import { AuthContext } from '../../contexts/AuthContext';
+import { NavLink } from 'react-router';
 const Register = () => {
 
     const {createUser} = use(AuthContext)
@@ -38,6 +39,11 @@ const Register = () => {
                                     <input type="password" name='password' className="input" placeholder="Password" />
                                     <div><a className="link link-hover">Forgot password?</a></div>
                                     <button  className="btn btn-neutral mt-4">Register </button>
+                                    <p>already have an account 
+                                        <NavLink to={'/login'}><button>
+                                        Login
+                                        </button></NavLink>
+                                        </p>
                                 </form>
                             </div>
                         </div>
