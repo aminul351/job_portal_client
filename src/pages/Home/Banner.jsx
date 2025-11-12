@@ -2,7 +2,6 @@ import React from 'react';
 import { color, motion } from "motion/react"
 import img1 from '../../assets/team1.jpg'
 import img2 from '../../assets/team2.jpg'
-import { img } from 'motion/react-client';
 
 
 

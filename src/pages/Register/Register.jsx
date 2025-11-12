@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import lottieRegister from '../../assets/lotties/register.json'
 import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink } from 'react-router';
+import SocialLogin from '../../shared/SocialLogin';
 const Register = () => {
 
     const {createUser} = use(AuthContext)
@@ -44,7 +45,12 @@ const Register = () => {
                                         Login
                                         </button></NavLink>
                                         </p>
+                                
                                 </form>
+                                <p>OR</p>
+                                <div>
+                                   <SocialLogin/>
+                                </div>
                             </div>
                         </div>
                     </div>
