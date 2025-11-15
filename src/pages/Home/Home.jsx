@@ -15,10 +15,15 @@ const Home = () => {
       .catch(err => console.error("❌ Error fetching jobs:", err));
   }, []);
 
+
+
+  // const jobPromise = fetch('http://localhost:3000/jobs').then(res => res.json())
+
   return (
     <div>
-      {/* <Banner /> */}
-      <HotJobs jobs={jobs} />   {/* pass data here */}
+      <Banner />
+      <HotJobs jobs={jobs} />  
+      {/* <HotJobs jobPromise={jobPromise} /> */}
     </div>
   );
 };

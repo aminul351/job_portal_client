@@ -1,17 +1,13 @@
-const HotJobs = ({ jobs }) => {
+import React from 'react';
+import JobCard from './JobCard'
+
+const HotJobs = ({jobs}) => {
+  console.log(jobs);
   return (
-    <div>
-      <h2>🔥 Hot Jobs</h2>
-      {jobs.length === 0 ? (
-        <p>No jobs found</p>
-      ) : (
-        jobs.map(job => (
-          <div key={job._id}>
-            <h3>{job.title}</h3>
-            {/* <p>{job.company}</p> */}
-          </div>
-        ))
-      )}
+    <div className='grid grid-cols-3 gap-6'>
+      {
+        jobs.map(job => <JobCard key={job._id} job={job} />)
+      }
     </div>
   );
 };

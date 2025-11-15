@@ -13,6 +13,7 @@ const JobCard = ({job}) => {
     <h2 className="card-title">{title}</h2>
     <p>{description}</p>
     <p>category : {category}</p>
+    <p>location : {location}</p>
     <div className="card-actions justify-end">
       <button className="btn btn-primary">Buy Now</button>
     </div>
