@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Banner from './Banner';
 import HotJobs from './HotJobs';
 
@@ -23,7 +23,9 @@ const Home = () => {
     <div>
       <Banner />
       <HotJobs jobs={jobs} />  
-      {/* <HotJobs jobPromise={jobPromise} /> */}
+      {/* <Suspense fallback={"loading..."}>
+        <HotJobs jobPromise={jobPromise} />
+      </Suspense> */}
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
 import JobCard from './JobCard'
 
 const HotJobs = ({jobs}) => {
+  // const jobs = use(jobPromise)
   console.log(jobs);
   return (
     <div className='grid grid-cols-3 gap-6'>
