@@ -2,11 +2,15 @@ import React, { use } from 'react';
 import Lottie from "lottie-react";
 import lottieRegister from '../../assets/lotties/register.json'
 import { AuthContext } from '../../contexts/AuthContext';
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import SocialLogin from '../../shared/SocialLogin';
 const Register = () => {
 
     const {createUser} = use(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state || '/'
+    console.log('location form register page', location);
 
     const handleSubmit = e =>{
         e.preventDefault();
@@ -18,6 +22,7 @@ const Register = () => {
         createUser(email,password)
         .then(result => {
             console.log(result.user);
+            navigate(from)
         })
         .catch(error => {
             console.log(error);
@@ -49,7 +54,7 @@ const Register = () => {
                                 </form>
                                 <p>OR</p>
                                 <div>
-                                   <SocialLogin/>
+                                   <SocialLogin from={from}/>
                                 </div>
                             </div>
                         </div>
