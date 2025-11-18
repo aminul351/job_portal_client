@@ -4,9 +4,10 @@ import lottieRegister from '../../assets/lotties/register.json'
 import { AuthContext } from '../../contexts/AuthContext';
 import { NavLink, useLocation, useNavigate } from 'react-router';
 import SocialLogin from '../../shared/SocialLogin';
+import useAuth from '../../hooks/useAuth';
 const Register = () => {
 
-    const {createUser} = use(AuthContext)
+    const {createUser} = useAuth()
     const location = useLocation()
     const navigate = useNavigate()
     const from = location.state || '/'

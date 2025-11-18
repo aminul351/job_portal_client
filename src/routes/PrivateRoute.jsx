@@ -1,7 +1,19 @@
+// private route page 
+// 1. !user --> login page(must use return)
+// 2.  location.pathname , state={location.pathname} 
+
+
+// login page
+// 1. location 
+// 2. navigate  
+// 3. from - location.state || '/'
+
+
+// navigate(from)
+
 import React, { use } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { Navigate, useLocation } from 'react-router';
-import { p } from 'motion/react-client';
 
 const PrivateRoute = ({ children }) => {
 
