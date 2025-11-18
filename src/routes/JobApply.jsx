@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../hooks/useAuth';
 import { useParams } from 'react-router';
+import axios from 'axios';
 
 const JobApply = () => {
 
@@ -14,7 +15,19 @@ const JobApply = () => {
         const github = form.github.value
         const resume = form.resume.value
         console.log(linkedin, github, resume);
+
+        const applications = {jobId, applicant : user.email, linkedin, github, resume}
+        axios.post('http://localhost:3000/application', applications)
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
     }
+
+    // axios diye data backend e pathabo 
+
 
     return (
         <div>
