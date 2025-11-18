@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import Banner from './Banner';
 import HotJobs from './HotJobs';
+import { ToastContainer } from 'react-toastify';
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -26,6 +27,7 @@ const Home = () => {
       {/* <Suspense fallback={"loading..."}>
         <HotJobs jobPromise={jobPromise} />
       </Suspense> */}
+      <ToastContainer/>
     </div>
   );
 };
