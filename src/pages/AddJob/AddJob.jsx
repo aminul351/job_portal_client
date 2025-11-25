@@ -28,9 +28,7 @@ const AddJob = () => {
         console.log(newJob);
 
 
-        axios.post('http://localhost:3000/jobs', {
-            newJob
-        })
+        axios.post('http://localhost:3000/jobs', newJob)
             .then(function (response) {
                 if(response.data.insertedId){
                     toast.success('job posted')

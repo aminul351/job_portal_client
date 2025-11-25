@@ -22,7 +22,7 @@ console.log(user?.email);
 
     return (
         <div>
-            <PostedJobList />
+            <PostedJobList postedJobs={postedJobs}/>
         </div>
     );
 };
