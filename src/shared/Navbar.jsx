@@ -30,7 +30,11 @@ const Navbar = () => {
 
     {/* recruiter */}
     {
-      user ? <li><NavLink to={'/addJob'}>Add Job</NavLink></li> : ''
+      user ? <>
+      <li><NavLink to={'/addJob'}>Add Job</NavLink></li> 
+      <li><NavLink to={'/postedJob'}>My Posted Job</NavLink></li> 
+      </>
+      : ''
     }
 
 

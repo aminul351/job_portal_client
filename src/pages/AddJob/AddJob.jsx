@@ -1,5 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const AddJob = () => {
 
@@ -12,22 +14,31 @@ const AddJob = () => {
         const form = e.target;
         const formData = new FormData(form)
         const data = Object.fromEntries(formData.entries())
-        // console.log(data);
 
 
         const { max, min, currency, ...newJob } = data;
-        newJob.salaryRange = {min, max, currency}
-        console.log(newJob);
-        
+        newJob.salaryRange = { min, max, currency }
+
         const requirementsStrings = newJob.requirements
-        const requirements = requirementsStrings.split(',').map(req => req.trim()) 
+        const requirements = requirementsStrings.split(',').map(req => req.trim())
         newJob.requirements = requirements;
-        console.log(requirements, newJob);
 
 
         newJob.responsibilities = newJob.responsibilities.split(',').map(res => res.trim())
         console.log(newJob);
 
+
+        axios.post('http://localhost:3000/jobs', {
+            newJob
+        })
+            .then(function (response) {
+                if(response.data.insertedId){
+                    toast.success('job posted')
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
     }
 
@@ -87,7 +98,7 @@ const AddJob = () => {
                 <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-1/2 mx-auto border p-4">
                     <legend className="fieldset-legend">Application Deadline</legend>
 
-                    <input type="date" name='applicationDeadline' className="input w-full" />
+                    <input type="date" name='deadline' className="input w-full" />
                 </fieldset>
 
                 {/* salary range  */}

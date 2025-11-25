@@ -25,11 +25,11 @@ const JobCard = ({ job }) => {
             </div>
           </div>
           <p className='font-bold'>{category}</p>
-          <p>Salary : {salaryRange.min} - {salaryRange.max} {salaryRange.currency} </p>
+          <p>Salary : {salaryRange?.min} - {salaryRange?.max} {salaryRange?.currency} </p>
           <p>{description}</p>
           <div>
             {
-              requirements.map((req, index) => <div className='badge badge-outline' key={index}>{req}</div>)
+              requirements?.map((req, index) => <div className='badge badge-outline' key={index}>{req}</div>)
             }
           </div>
           <div className="card-actions justify-end">
